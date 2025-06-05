@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define character encoding for the document -->
+  <meta charset="UTF-8" />
+  <!-- Ensure responsive design for various devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Meta description for SEO, summarizing the booking page content -->
+  <meta name="description" content="Book your exclusive beach adventure with a modern, seamless experience. Select your package and let the journey begin!" />
+  <!-- Set the page title displayed in browser tab -->
+  <title>Book Your Beach Adventure</title>
+  <!-- Import Inter font from Google Fonts for consistent typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <!-- Inline CSS for booking page styling and animations -->
+  <style>
+    /* Reset default margins and padding, set global font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Set background gradient and text color for the body */
+    body {
+      background: linear-gradient(120deg, #e0f7fa, #fff3e0);
+      color: #14505c;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animation keyframes for background pulse effect */
+    @keyframes wave-pulse {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    /* Animation keyframes for floating images */
+    @keyframes float-modern {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(10px, -15px) rotate(5deg); }
+    }
+
+    /* Animation keyframes for fade-in-up effect */
+    @keyframes fade-in-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Animation keyframes for scale-in effect */
+    @keyframes scale-in {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Animated background with radial gradient and pulse effect */
+    .animated-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 196, 204, 0.2) 10%, transparent 50%);
+      animation: wave-pulse 15s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    /* Main booking section container with flexible layout */
+    .booking-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 4rem 8%;
+      min-height: 100vh;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      gap: 2rem;
+      margin-top: 100px;
+    }
+
+    /* Left content area with blurred background effect */
+    .left-content {
+      width: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(20, 80, 92, 0.2);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Class to trigger visibility for left content animation */
+    .left-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Styling for section title with gradient text effect */
+    .section-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #14505c;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+      background: linear-gradient(45deg, #0288d1, #26a69a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Styling for section description text with animation */
+    .section-text {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #3d5a80;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.2s;
+    }
+
+    /* Class to trigger visibility for section text animation */
+    .section-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Styling for booking form with vertical layout */
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* Styling for form inputs, select, and textarea with animation */
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      color: #14505c;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Class to trigger visibility for form elements animation */
+    .booking-form input.visible,
+    .booking-form select.visible,
+    .booking-form textarea.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Focus state for form inputs with shadow effect */
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0, 196, 204, 0.3);
+      outline: none;
+    }
+
+    /* Styling for submit button with gradient background */
+    .booking-form button {
+      background: linear-gradient(45deg, #0288d1, #26a69a);
+      color: #fff;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    /* Hover effect for submit button with lift and shadow */
+    .booking-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(2, 136, 209, 0.4);
+    }
+
+    /* Right banner area with floating images */
+    .right-banner {
+      width: 40%;
+      position: relative;
+      perspective: 1000px;
+    }
+
+    /* Styling for floating images with animation */
+    .floating-img, .floating-img2 {
+      position: absolute;
+      transition: all 0.5s ease;
+    }
+
+    /* Image styling with shadow and float animation */
+    .floating-img img, .floating-img2 img {
+      width: 200px;
+      border-radius: 15px;
+      filter: drop-shadow(0 10px 20px rgba(20, 80, 92, 0.3));
+      animation: float-modern 6s ease-in-out infinite;
+    }
+
+    /* Positioning for first floating image */
+    .floating-img {
+      top: 15%;
+      left: 20%;
+    }
+
+    /* Positioning for second floating image with animation delay */
+    .floating-img2 {
+      bottom: 15%;
+      right: 20%;
+      animation-delay: 3s;
+    }
+
+    /* Particle effect for banner background */
+    .banner-particle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://source.unsplash.com/100x100/?bubble') no-repeat center;
+      opacity: 0.2;
+      animation: wave-pulse 10s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    /* Package highlights section with gradient background */
+    .package-highlights {
+      padding: 5rem 8%;
+      background: linear-gradient(180deg, #fff3e0, #e0f7fa);
+      position: relative;
+    }
+
+    /* Background layer for highlights section with pulse effect */
+    .highlight-bg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(38, 166, 154, 0.1) 20%, transparent 60%);
+      animation: wave-pulse 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    /* Centered container for package highlights content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Grid layout for highlight cards */
+    .highlight-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Styling for individual highlight cards with animation */
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(224, 247, 250, 0.8));
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(2, 136, 209, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    /* Class to trigger visibility for highlight card animation */
+    .highlight-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hover effect for highlight cards with lift and shadow */
+    .highlight-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(2, 136, 209, 0.3);
+    }
+
+    /* Styling for card image container */
+    .highlight-card .card-image {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    /* Styling for card images with zoom effect on hover */
+    .highlight-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    /* Zoom effect for card images on hover */
+    .highlight-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Styling for card title */
+    .highlight-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #14505c;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Styling for card preview text */
+    .highlight-card .card-preview {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #3d5a80;
+      line-height: 1.6;
+    }
+
+    /* Styling for card details overlay with slide-in animation */
+    .highlight-card .card-details {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(20, 80, 92, 0.9);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.5;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.4s ease;
+    }
+
+    /* Show card details on hover */
+    .highlight-card:hover .card-details {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Dim image brightness on hover for card details visibility */
+    .highlight-card:hover img {
+      filter: brightness(0.7);
+    }
+
+    /* Prevent horizontal scrolling in textarea */
+    textarea {
+      overflow-x: auto;
+      resize: none;
+    }
+
+    /* Responsive styles for tablets and smaller screens */
+    @media (max-width: 1024px) {
+      .booking-container {
+        padding: 3rem 5%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .left-content, .right-banner {
+        width: 100%;
+        max-width: 600px;
+      }
+      .left-content {
+        padding: 2rem;
+      }
+      .right-banner {
+        margin-top: 2rem;
+        height: 300px;
+      }
+      .floating-img img, .floating-img2 img {
+        width: 150px;
+      }
+      .floating-img {
+        top: 10%;
+        left: 15%;
+      }
+      .floating-img2 {
+        bottom: 10%;
+        right: 15%;
+      }
+      .section-title {
+        font-size: 2.8rem;
+      }
+    }
+
+    /* Responsive styles for mobile devices */
+    @media (max-width: 768px) {
+      .booking-container {
+        padding: 2.5rem 4%;
+      }
+      .left-content {
+        padding: 1.5rem;
+      }
+      .section-title {
+        font-size: 2.5rem;
+      }
+      .section-text {
+        font-size: 1rem;
+      }
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+      }
+      .booking-form button {
+        padding: 0.9rem;
+        font-size: 1rem;
+      }
+      .floating-img img, .floating-img2 img {
+        width: 120px;
+      }
+      .highlight-card .card-image {
+        height: 160px;
+      }
+    }
+
+    /* Responsive styles for small mobile devices */
+    @media (max-width: 480px) {
+      .booking-container {
+        padding: 2rem 3%;
+      }
+      .left-content {
+        padding: 1.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .section-text {
+        font-size: 0.9rem;
+      }
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+      .booking-form button {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+      }
+      .floating-img img, .floating-img2 img {
+        width: 100px;
+      }
+      .floating-img {
+        top: 5%;
+        left: 10%;
+      }
+      .floating-img2 {
+        bottom: 5%;
+        right: 10%;
+      }
+      .package-highlights {
+        padding: 3rem 4%;
+      }
+      .highlight-card {
+        padding: 1rem;
+      }
+      .highlight-card .card-image {
+        height: 140px;
+      }
+      .highlight-card h3 {
+        font-size: 1.2rem;
+      }
+      .highlight-card .card-preview {
+        font-size: 0.85rem;
+      }
+      .highlight-card .card-details {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+      }
+    }
+  </style>
+  <!-- Link to custom CSS for additional styling -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Link to Bootstrap CSS for responsive grid and components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Link to Font Awesome for icons used in navigation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header section containing navigation -->
+  <header>
+    <!-- Navigation bar with container for responsive width -->
+    <nav class="container" id="nav-bar">
+      <!-- Logo section with site title and link to homepage -->
+      <div class="log">
+        <a href="#" class="logo">BeautyOfBeaches</a>
+      </div>
+      <!-- Hamburger menu for mobile navigation, hidden on large screens -->
+      <div class="hamburger d-lg-none">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <!-- Navigation menu with links and booking button -->
+      <div class="nav-menu">
+        <ul class="d-flex gap-5 fs-5 mt-4">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/zone.html">Zone</a></li>
+          <!-- Book Now button with beach umbrella icon -->
+          <li><button class="book-btn">
+            <a href="../pages/booking.html"><i class="fas fa-umbrella-beach"></i> Book Now</a>
+          </button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Animated background layer for visual effect -->
+  <div class="animated-bg"></div>
+
+  <!-- Booking section with form and banner -->
+  <section class="booking-container">
+    <!-- Left content with booking form and animated elements -->
+    <div class="left-content animate-on-scroll">
+      <h1 class="section-title">Book Your Beach Adventure</h1>
+      <p class="section-text">Plan your ultimate beach escape with a seamless booking experience. Select your package and let us handle the rest!</p>
+      <!-- Booking form with input fields and animations -->
+      <form class="booking-form">
+        <input type="text" placeholder="Full Name" required class="animate-on-scroll" />
+        <input type="email" placeholder="Email Address" required class="animate-on-scroll" />
+        <input type="tel" placeholder="Phone Number" required class="animate-on-scroll" />
+        <!-- Dropdown for selecting package options -->
+        <select required class="animate-on-scroll">
+          <option selected disabled>Choose Package</option>
+          <option>Beach Bonfire Night</option>
+          <option>Sunset Cruise</option>
+          <option>Snorkeling Adventure</option>
+          <option>Surf & Turf Day</option>
+        </select>
+        <!-- Textarea for special requests -->
+        <textarea placeholder="Any special requests?" rows="4" class="animate-on-scroll"></textarea>
+        <!-- Submit button for form -->
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+    <!-- Right banner with floating images and particle effect -->
+    <div class="right-banner">
+      <!-- First floating image with animation -->
+      <div class="floating-img">
+        <img src="../img/booking3.jpg" alt="Beach Chair" />
+      </div>
+      <!-- Second floating image with delayed animation -->
+      <div class="floating-img2">
+        <img src="../img/booking4.jpg" alt="Umbrella" />
+      </div>
+      <!-- Particle background for banner -->
+      <div class="banner-particle"></div>
+    </div>
+  </section>
+
+  <!-- Package highlights section showcasing available packages -->
+  <section class="package-highlights">
+    <!-- Background layer for visual effect -->
+    <div class="highlight-bg-layer"></div>
+    <!-- Centered container for package content -->
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Explore Our Packages</h2>
+      <p class="section-text animate-on-scroll">Discover curated beach adventures designed for unforgettable moments.</p>
+      <!-- Grid of package highlight cards -->
+      <div class="highlight-cards">
+        <!-- Highlight card for Beach Bonfire Night -->
+        <div class="highlight-card animate-on-scroll">
+          <div class="card-image">
+            <img src="../img/Beach Bonfire Night.jpg" alt="Bonfire Night" />
+            <div class="card-details">Guided stargazing, live acoustic music, marshmallows. 4 hours.</div>
+          </div>
+          <h3>Beach Bonfire Night</h3>
+          <div class="card-preview">Experience a magical evening with a beach bonfire, live music, and stargazing.</div>
+        </div>
+        <!-- Highlight card for Sunset Cruise -->
+        <div class="highlight-card animate-on-scroll">
+          <div class="card-image">
+            <img src="../img/Sunset Cruise.jpg" alt="Sunset Cruise" />
+            <div class="card-details">Gourmet dinner, open bar, live entertainment. 3 hours.</div>
+          </div>
+          <h3>Sunset Cruise</h3>
+          <div class="card-preview">Sail into the horizon with a luxurious cruise and breathtaking ocean views.</div>
+        </div>
+        <!-- Highlight card for Snorkeling Adventure -->
+        <div class="highlight-card animate-on-scroll">
+          <div class="card-image">
+            <img src="../img/Snorkeling Adventure.jpg" alt="Snorkeling Adventure" />
+            <div class="card-details">Guided tour, all gear, underwater photography. 2 hours.</div>
+          </div>
+          <h3>Snorkeling Adventure</h3>
+          <div class="card-preview">Explore vibrant coral reefs and swim with tropical fish in crystal waters.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section with branding, links, and social media -->
+  <footer class="beach-footer">
+    <!-- Container for footer content -->
+    <div class="footer-container">
+      <!-- Footer brand information -->
+      <div class="footer-brand">
+        <h2 class="footer-logo">Beaches</h2>
+        <p class="footer-tagline">Resorts for Everyone by Sandals</p>
+        <!-- Button for newsletter subscription -->
+        <button class="newsletter-btn">Sign up for News & Deals</button>
+      </div>
+      <!-- Footer navigation links -->
+      <div class="footer-links">
+        <!-- Column for booking-related links -->
+        <div class="footer-column">
+          <h3>Book a Vacation</h3>
+          <ul>
+            <li><a href="#">Book Online</a></li>
+            <li><a href="#">Get a Price Quote</a></li>
+            <li><a href="#">View Specials</a></li>
+            <li><a href="#">Find a Travel Agent</a></li>
+            <li><a href="#">View Locations</a></li>
+            <li><a href="#">Vacation Deals</a></li>
+          </ul>
+        </div>
+        <!-- Column for post-booking options -->
+        <div class="footer-column">
+          <h3>Already Booked?</h3>
+          <ul>
+            <li><a href="#">Check-in Online</a></li>
+            <li><a href="#">Book Optional Extras</a></li>
+            <li><a href="#">Balance Payment</a></li>
+            <li><a href="#">Butler Preferences</a></li>
+          </ul>
+        </div>
+        <!-- Column for quick navigation links -->
+        <div class="footer-column">
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore Zone</a></li>
+            <li><a href="#">For Booking</a></li>
+            <li><a href="#">About the Beaches</a></li>
+            <li><a href="#">Beach Gallery</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Social media icons for footer -->
+      <div class="footer-social">
+        <a href="https://www.facebook.com/raza.ladla.10?mibextid=ZbWKwL" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_rajput_raza_?utm_source=qr&igsh=cnh1NGo5ZG0xOGZ2" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.pinterest.com/" class="social-icon"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <!-- Footer bottom with copyright and credit -->
+    <div class="footer-bottom text-center">
+      <p>© 2025 Beaches Resorts. All Rights Reserved.</p>
+      <p>Made by ❤ Raza</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript for interactive components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  <!-- Custom JavaScript for additional functionality -->
+  <script src="../js/main.js"></script>
+
+  <!-- Inline JavaScript for scroll animations and form handling -->
+  <script>
+    // Initialize scripts after DOM content is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Handle form submission with alert and reset
+      document.querySelectorAll('.booking-form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('🎉 Booking Successful! We’ll get back to you soon.');
+          this.reset();
+        });
+      });
+
+      // Intersection Observer for scroll-based visibility animations
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe elements with animate-on-scroll class
+      document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+        scrollObserver.observe(element);
+      });
+
+      // Intersection Observer for staggered animations in form and cards
+      const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const inputs = entry.target.querySelectorAll('input, select, textarea');
+            const cards = entry.target.querySelectorAll('.highlight-card');
+            inputs.forEach((input, index) => {
+              input.style.transitionDelay = `${index * 0.15}s`;
+              input.classList.add('visible');
+            });
+            cards.forEach((card, index) => {
+              card.style.transitionDelay = `${index * 0.15}s`;
+              card.classList.add('visible');
+            });
+          }
+        });
+      }, { threshold: 0.2 });
+
+      // Observe booking form and package highlights for staggered animations
+      document.querySelectorAll('.booking-form, .package-highlights').forEach((element) => {
+        staggerObserver.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

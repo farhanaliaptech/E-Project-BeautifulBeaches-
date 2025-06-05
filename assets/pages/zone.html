@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Ensure responsive design for various devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta description for SEO, summarizing the page content -->
+    <meta name="description" content="Explore beautiful beaches across North, East, South, and West zones with Beaches Explorer.">
+    <!-- Set the page title displayed in browser tab -->
+    <title>Beaches Explorer</title>
+    <!-- Link to custom CSS for styling the website -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Link to Bootstrap CSS for responsive grid and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Link to Font Awesome for icons used throughout the site -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header section containing navigation -->
+    <header>
+        <!-- Navigation bar with container for responsive width -->
+        <nav class="container" id="nav-bar">
+            <!-- Logo section with site title and link to homepage -->
+            <div class="log">
+                <a href="#" class="logo">BeautyOfBeaches</a>
+            </div>
+            <!-- Hamburger menu for mobile navigation, hidden on large screens -->
+            <div class="hamburger d-lg-none">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- Navigation menu with links and booking button -->
+            <div class="nav-menu">
+                <ul class="d-flex gap-5 fs-5 mt-4">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/zone.html">Zone</a></li>
+                    <!-- Book Now button with beach umbrella icon -->
+                    <li><button class="book-btn">
+                        <a href="../pages/booking.html"><i class="fas fa-umbrella-beach"></i> Book Now</a>
+                    </button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero section with dynamic background and introductory content -->
+    <section class="vibrant-hero-section" id="vibrant-hero">
+        <!-- Particle background effect for visual enhancement -->
+        <div class="hero-particle-bg"></div>
+        <!-- Wave overlay for aesthetic background styling -->
+        <div class="hero-wave-overlay"></div>
+        <!-- Content box for hero section text and button -->
+        <div class="hero-content-box">
+            <p class="hero-intro-text">Your Beach Adventure Awaits</p>
+            <!-- Main heading with reveal animation for each word -->
+            <h1 class="hero-display-title">
+                <span class="title-reveal">Discover</span>
+                <span class="title-reveal">Pristine</span>
+                <span class="title-reveal">Shores</span>
+            </h1>
+            <!-- Button linking to explore section -->
+            <a href="#explore"><button class="vibrant-explore-btn">Begin Journey</button></a>
+        </div>
+        <!-- Social media links displayed in hero section -->
+        <div class="hero-social-links d-flex gap-5">
+            <a href="https://x.com/"><i class="fa-brands fa-x-twitter fa-lg" style="color: black;"></i></a>
+            <a href="https://www.facebook.com/raza.ladla.10?mibextid=ZbWKwL"><i class="fa-brands fa-facebook fa-lg" style="color: black;"></i></a>
+            <a href="https://www.instagram.com/_rajput_raza_?utm_source=qr&igsh=cnh1NGo5ZG0xOGZ2"><i class="fa-brands fa-instagram fa-lg" style="color: black;"></i></a>
+        </div>
+    </section>
+
+    <!-- Main content wrapper for beach sections -->
+    <main>
+        <!-- North Beaches section showcasing specific beaches -->
+        <section id="north" class="north-section">
+            <!-- Container for North Beaches content -->
+            <div class="beaches-container">
+                <h2 class="beaches-title">Explore North Beaches</h2>
+                <!-- Beach card for Serene Cove -->
+                <div class="beach-card">
+                    <img src="../img/Serene Cove.jpg" alt="Serene Cove Beach" loading="lazy">
+                    <div class="beach-content">
+                        <h3>Serene Cove</h3>
+                        <p>Tucked away between lush forested hills, a hidden gem with crystal-clear waters.</p>
+                        <ul>
+                            <li>Crystal-clear waters for kayaking</li>
+                            <li>Guided eco-tours through forests</li>
+                            <li>Stargazing under clear skies</li>
+                        </ul>
+                        <a href="#" class="btn explore-more">Discover More</a>
+                    </div>
+                </div>
+                <!-- Beach card for Misty Shores -->
+                <div class="beach-card">
+                    <img src="../img/Misty Shores1.jpg" alt="Misty Shores Beach" loading="lazy">
+                    <div class="beach-content">
+                        <h3>Misty Shores</h3>
+                        <p>Embrace the mystical charm of foggy coastlines, perfect for photographers.</p>
+                        <ul>
+                            <li>Spectacular sunrise views</li>
+                            <li>Birdwatching with rare species</li>
+                            <li>Cozy beachside cafes</li>
+                        </ul>
+                        <a href="#" class="btn explore-more">Discover More</a>
+                    </div>
+                </div>
+                <!-- Beach card for Emerald Bay -->
+                <div class="beach-card">
+                    <img src="../img/Emerald Bay.jpg" alt="Emerald Bay Beach" loading="lazy">
+                    <div class="beach-content">
+                        <h3>Emerald Bay</h3>
+                        <p>Turquoise waters and coral reefs offer an unforgettable underwater adventure.</p>
+                        <ul>
+                            <li>Snorkeling and scuba diving</li>
+                            <li>Boat tours to hidden coves</li>
+                            <li>Family-friendly activities</li>
+                        </ul>
+                        <a href="#" class="btn explore-more">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- East Beaches section with vibrant theme -->
+        <section id="east" class="east-section">
+            <!-- Hero section for East Beaches introduction -->
+            <div class="east-hero">
+                <h1 class="section-title">East Beaches</h1>
+                <p class="section-subtitle">Discover vibrant shores with modern attractions and lively atmospheres.</p>
+            </div>
+            <!-- Container for East Beaches content -->
+            <div class="east-beaches-container">
+                <h2 class="beaches-title">Discover East Beaches</h2>
+                <!-- Beach card for Neon Coast -->
+                <div class="east-beach-card">
+                    <img src="../img/Neon Coast.jpg" alt="Neon Coast Beach" loading="lazy">
+                    <div class="east-beach-content">
+                        <h3>Neon Coast</h3>
+                        <p>Electrifying vibes with glowing sands and lively nightlife.</p>
+                        <ul>
+                            <li>Beach parties with live music</li>
+                            <li>Interactive art installations</li>
+                            <li>Night markets</li>
+                        </ul>
+                        <a href="#" class="btn east-explore-more">Explore Now</a>
+                    </div>
+                </div>
+                <!-- Beach card for Starlight Bay -->
+                <div class="east-beach-card">
+                    <img src="../img/Starlight Bay.jpg" alt="Starlight Bay Beach" loading="lazy">
+                    <div class="east-beach-content">
+                        <h3>Starlight Bay</h3>
+                        <p>Cosmic beauty with glowing tide pools and stargazing.</p>
+                        <ul>
+                            <li>Bioluminescent tide pool tours</li>
+                            <li>Astronomy workshops</li>
+                            <li>Beachfront dining</li>
+                        </ul>
+                        <a href="#" class="btn east-explore-more">Explore Now</a>
+                    </div>
+                </div>
+                <!-- Beach card for Cyber Cove -->
+                <div class="east-beach-card">
+                    <img src="../img/Cyber Cove.jpg" alt="Cyber Cove Beach" loading="lazy">
+                    <div class="east-beach-content">
+                        <h3>Cyber Cove</h3>
+                        <p>Modern attractions meet pristine beaches for a unique escape.</p>
+                        <ul>
+                            <li>Water sports adventures</li>
+                            <li>Beach cafes</li>
+                            <li>Guided tours</li>
+                        </ul>
+                        <a href="#" class="btn east-explore-more">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- South Beaches section with vibrant theme -->
+        <section id="south" class="south-section">
+            <!-- Hero section for South Beaches with sun icon -->
+            <div class="south-hero">
+                <h1 class="section-title">South Beaches</h1>
+                <p class="section-subtitle">Experience vibrant sunsets and lively festivals in the South.</p>
+                <!-- Decorative sun icon for visual appeal -->
+                <img src="../img/north exp3.jpg" alt="Sun Icon" class="sun-icon" loading="lazy">
+            </div>
+            <!-- Container for South Beaches content -->
+            <div class="south-beaches-container">
+                <h2 class="beaches-title">Discover South Beaches</h2>
+                <!-- Beach card for Fiery Sands -->
+                <div class="south-beach-card">
+                    <img src="../img/Fiery Sands.jpg" alt="Fiery Sands Beach" loading="lazy">
+                    <div class="south-beach-content">
+                        <h3>Fiery Sands</h3>
+                        <p>Bask in vibrant sunsets and lively beach festivals.</p>
+                        <ul>
+                            <li>Annual dance festivals</li>
+                            <li>Sunset beach yoga</li>
+                            <li>Local food markets</li>
+                        </ul>
+                        <a href="#" class="btn south-explore-more">Explore</a>
+                    </div>
+                </div>
+                <!-- Beach card for Volcano Bay -->
+                <div class="south-beach-card">
+                    <img src="../img/Volcano Bay.jpg" alt="Volcano Bay Beach" loading="lazy">
+                    <div class="south-beach-content">
+                        <h3>Volcano Bay</h3>
+                        <p>Thrilling beaches near volcanic landscapes.</p>
+                        <ul>
+                            <li>Hiking trails</li>
+                            <li>Hot spring relaxation</li>
+                            <li>Adventure sports</li>
+                        </ul>
+                        <a href="#" class="btn south-explore-more">Explore</a>
+                    </div>
+                </div>
+                <!-- Beach card for Sunlit Shores -->
+                <div class="south-beach-card">
+                    <img src="../img/Sunlit Shores.jpg" alt="Sunlit Shores Beach" loading="lazy">
+                    <div class="south-beach-content">
+                        <h3>Sunlit Shores</h3>
+                        <p>Endless sunshine with vibrant beach activities.</p>
+                        <ul>
+                            <li>Beach volleyball</li>
+                            <li>Water sports</li>
+                            <li>Live music events</li>
+                        </ul>
+                        <a href="#" class="btn south-explore-more">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- West Beaches section for relaxation theme -->
+        <section id="west" class="west-section">
+            <!-- Container for West Beaches content -->
+            <div class="west-beaches-container">
+                <h2 class="beaches-title">Explore West Beaches</h2>
+                <!-- Beach card for Golden Sands -->
+                <div class="west-beach-card">
+                    <img src="../img/Golden Sands.jpg" alt="Golden Sands Beach" loading="lazy">
+                    <div class="west-beach-content">
+                        <h3>Golden Sands</h3>
+                        <p>Luxurious beaches with golden shores, ideal for relaxation.</p>
+                        <ul>
+                            <li>Beachfront spa treatments</li>
+                            <li>Sunset meditation</li>
+                            <li>Private cabanas</li>
+                        </ul>
+                        <a href="#" class="btn west-explore-more">Discover More</a>
+                    </div>
+                </div>
+                <!-- Beach card for Palm Haven -->
+                <div class="west-beach-card">
+                    <img src="../img/Palm Haven.jpg" alt="Palm Haven Beach" loading="lazy">
+                    <div class="west-beach-content">
+                        <h3>Palm Haven</h3>
+                        <p>Tranquil beaches lined with palms, perfect for getaways.</p>
+                        <ul>
+                            <li>Sunset cruises</li>
+                            <li>Beach picnics</li>
+                            <li>Hammock lounges</li>
+                        </ul>
+                        <a href="#" class="btn west-explore-more">Discover More</a>
+                    </div>
+                </div>
+                <!-- Beach card for Sunset Cove -->
+                <div class="west-beach-card">
+                    <img src="../img/Sunset Cove.jpg" alt="Sunset Cove Beach" loading="lazy">
+                    <div class="west-beach-content">
+                        <h3>Sunset Cove</h3>
+                        <p>Peaceful shores with stunning sunsets and dining.</p>
+                        <ul>
+                            <li>Gourmet restaurants</li>
+                            <li>Sunset walks</li>
+                            <li>Luxury villas</li>
+                        </ul>
+                        <a href="#" class="btn west-explore-more">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section with branding, links, and social media -->
+    <footer class="beach-footer">
+        <!-- Container for footer content -->
+        <div class="footer-container">
+            <!-- Footer brand information -->
+            <div class="footer-brand">
+                <h2 class="footer-logo">Beaches</h2>
+                <p class="footer-tagline">Resorts for Everyone by Sandals</p>
+                <!-- Button for newsletter subscription -->
+                <button class="newsletter-btn">Sign up for News & Deals</button>
+            </div>
+            <!-- Footer navigation links -->
+            <div class="footer-links">
+                <!-- Column for booking-related links -->
+                <div class="footer-column">
+                    <h3>Book a Vacation</h3>
+                    <ul>
+                        <li><a href="#">Book Online</a></li>
+                        <li><a href="#">Get a Price Quote</a></li>
+                        <li><a href="#">View Specials</a></li>
+                        <li><a href="#">Find a Travel Agent</a></li>
+                        <li><a href="#">View Locations</a></li>
+                        <li><a href="#">Vacation Deals</a></li>
+                    </ul>
+                </div>
+                <!-- Column for post-booking options -->
+                <div class="footer-column">
+                    <h3>Already Booked?</h3>
+                    <ul>
+                        <li><a href="#">Check-in Online</a></li>
+                        <li><a href="#">Book Optional Extras</a></li>
+                        <li><a href="#">Balance Payment</a></li>
+                        <li><a href="#">Butler Preferences</a></li>
+                    </ul>
+                </div>
+                <!-- Column for quick navigation links -->
+                <div class="footer-column">
+                    <h3>Quick links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Explore Zone</a></li>
+                        <li><a href="#">For Booking</a></li>
+                        <li><a href="#">About the Beaches</a></li>
+                        <li><a href="#">Beach Gallery</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Social media icons for footer -->
+            <div class="footer-social">
+                <a href="https://www.facebook.com/raza.ladla.10?mibextid=ZbWKwL" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/_rajput_raza_?utm_source=qr&igsh=cnh1NGo5ZG0xOGZ2" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.pinterest.com/" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <!-- Footer bottom with copyright and credit -->
+        <div class="footer-bottom text-center">
+            <p>© 2025 Beaches Resorts. All Rights Reserved.</p>
+            <p>Made by ❤ Raza</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript for interactive components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    <!-- Custom JavaScript for additional functionality and interactions -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

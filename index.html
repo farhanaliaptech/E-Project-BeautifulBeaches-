@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define character encoding for the document -->
+  <meta charset="UTF-8" />
+  <!-- Ensure responsive design for various devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Set the page title displayed in browser tab -->
+  <title>E-Project</title>
+  <!-- Link to custom CSS for styling the website -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Link to Bootstrap CSS for responsive grid and components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Link to Font Awesome for icons used throughout the site -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Include GSAP library for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Include GSAP ScrollTrigger plugin for scroll-based animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <!-- Main content wrapper for the entire page -->
+  <main>
+    <!-- Header section containing navigation -->
+    <header>
+      <!-- Navigation bar with container for responsive width -->
+      <nav class="container" id="nav-bar">
+        <!-- Logo section with site title and link to homepage -->
+        <div class="log">
+          <a href="#" class="logo">BeautyOfBeaches</a>
+        </div>
+        <!-- Hamburger menu for mobile navigation, hidden on large screens -->
+        <div class="hamburger d-lg-none">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <!-- Navigation menu with links and booking button -->
+        <div class="nav-menu">
+          <ul class="d-flex gap-5 fs-5 mt-4">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assets/pages/about.html">About</a></li>
+            <li><a href="assets/pages/zone.html">Zone</a></li>
+            <!-- Book Now button with beach umbrella icon -->
+            <li><button class="book-btn">
+              <a href="assets/pages/booking.html"><i class="fas fa-umbrella-beach"></i> Book Now</a>
+            </button></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Home section with background video and introductory content -->
+    <section class="home position-relative" id="home">
+      <!-- Background video that autoplays, loops, and is muted -->
+      <video class="home-img" loop autoplay muted>
+        <source src="assets/video/BTC_TB_Video_Compres_49f4c408f4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Content overlay on video with text and call-to-action -->
+      <div class="home-content">
+        <p class="fs-4">Discover your place</p>
+        <!-- Animated typewriter effect for main heading -->
+        <h1 class="typewriter">
+          <span>Explore The</span>
+          <span>Best Beautiful</span>
+          <span>Beaches</span>
+        </h1>
+        <!-- Explore button linking to explore section -->
+        <a href="#explore"><button class="exp-btn">Explore</button></a>
+      </div>
+      <!-- Social media links displayed in home section -->
+      <div class="home-social d-flex gap-5">
+        <a href="https://x.com/"><i class="fa-brands fa-x-twitter fa-lg text-white"></i></a>
+        <a href="https://www.facebook.com/raza.ladla.10?mibextid=ZbWKwL"><i class="fa-brands fa-facebook fa-lg"></i></a>
+        <a href="https://www.instagram.com/_rajput_raza_?utm_source=qr&igsh=cnh1NGo5ZG0xOGZ2"><i class="fa-brands fa-instagram fa-lg"></i></a>
+      </div>
+    </section>
+
+    <!-- Zone section showcasing different beach zones -->
+    <section class="zone container text-center" id="explore">
+      <h1 class="my-5">Explore Zones</h1>
+      <!-- Container for zone cards displayed in a flex layout -->
+      <div class="card-container d-flex">
+        <!-- Card for North Zone with animation class -->
+        <div class="card left-animate">
+          <img src="assets/img/north-card.jpg" alt="North Zone Beach" style="width:100%">
+          <h1 class="mt-3">North Zone</h1>
+          <p class="title">Explore North Beaches</p>
+          <a href="assets/pages/zone.html"><button>Explore</button></a>
+        </div>
+        <!-- Card for East Zone with animation class -->
+        <div class="card right-animate">
+          <img src="assets/img/east-card.jpg" alt="East Zone Beach" style="width:100%">
+          <h1 class="mt-3">East Zone</h1>
+          <p class="title">Explore East Beaches</p>
+          <a href="assets/pages/zone.html"><button>Explore</button></a>
+        </div>
+        <!-- Card for West Zone with animation class -->
+        <div class="card left-animate">
+          <img src="assets/img/west-card.jpg" alt="West Zone Beach" style="width:100%">
+          <h1 class="mt-3">West Zone</h1>
+          <p class="title">Explore West Beaches</p>
+          <a href="assets/pages/zone.html"><button>Explore</button></a>
+        </div>
+        <!-- Card for South Zone with animation class -->
+        <div class="card right-animate">
+          <img src="assets/img/south-card.jpg" alt="South Zone Beach" style="width:100%">
+          <h1 class="mt-3">South Zone</h1>
+          <p class="title">Explore South Beaches</p>
+          <a href="assets/pages/zone.html"><button>Explore</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section displaying beach images in a grid -->
+    <section class="beach-gallery" id="gallery">
+      <h2 class="gallery-title">🌴 Stunning Beach Views</h2>
+      <p class="gallery-subtitle">Enjoy the scenic beauty of our resort paradise</p>
+      <!-- Grid layout for gallery images -->
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/img/gallery-1.jpg" alt="Beach Sunset"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-2.jpg" alt="Pool View"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-3.jpg" alt="Night Resort"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-4.jpg" alt="Beach Umbrella"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-5.jpg" alt="Dinner View"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-6.jpg" alt="Lights at Night"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-7.jpg" alt="Night Resort"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-8.jpg" alt="Night Resort"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-9.jpg" alt="Night Resort"></div>
+        <div class="gallery-item"><img src="assets/img/gallery-10.jpg" alt="Night Resort"></div>
+      </div>
+    </section>
+
+    <!-- Promo carousel section for exclusive offers -->
+    <section class="promo-carousel-section promo-hidden">
+      <h3 class="promo-sub-heading">📢 Advertisement</h3>
+      <h2 class="promo-carousel-heading">🌟 Exclusive Offers</h2>
+      <!-- Container for carousel slides -->
+      <div class="promo-carousel-container">
+        <!-- Active slide with promotional content -->
+        <div class="promo-carousel-slide promo-active">
+          <img src="assets/img/ad11.jpg" alt="Maldives Getaway Offer">
+          <p>✈️ Maldives Getaway – Save 30% on Flights</p>
+          <a href="#" class="promo-cta">Book Now</a>
+        </div>
+        <div class="promo-carousel-slide">
+          <img src="assets/img/ad1.jpg" alt="Tropical Escapes Offer">
+          <p>🌴 Tropical Escapes – Deals from $199</p>
+          <a href="#" class="promo-cta">Explore Deals</a>
+        </div>
+        <div class="promo-carousel-slide">
+          <img src="assets/img/ad3.jpg" alt="Summer Bliss Offer">
+          <p>🏖️ Summer Bliss – Limited Time Offer!</p>
+          <a href="#" class="promo-cta">Discover Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities section with a card slider -->
+    <section class="activities-section">
+      <h2 class="section-title">Popular Beach Activities</h2>
+      <!-- Slider container with navigation buttons -->
+      <div class="slider-container">
+        <button class="slider-btn prev">❮</button>
+        <!-- Card slider for activities -->
+        <div class="card-slider" id="cardSlider">
+          <div class="activity-card">
+            <img src="assets/img/Beach Volleyball.jpg" alt="Beach Volleyball" />
+            <h3>Beach Volleyball</h3>
+            <p>Join a game or start your own on our soft sandy courts. Fun and fitness in the sun!</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/Jet Skiing.jpg" alt="Jet Skiing" />
+            <h3>Jet Skiing</h3>
+            <p>Feel the thrill as you zoom over the waves on a powerful jet ski. Perfect for adventure lovers!</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/Sunbathing.jpg" alt="Sunbathing" />
+            <h3>Sunbathing</h3>
+            <p>Relax and soak in the sun while enjoying cool breezes and ocean sounds on the shoreline.</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/Swimming.jpg" alt="Swimming" />
+            <h3>Swimming</h3>
+            <p>Dive into the refreshing waves and enjoy a relaxing swim along the shore.</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/Surfing.jpg" alt="Surfing" />
+            <h3>Surfing</h3>
+            <p>Ride the waves and experience the thrill of the ocean like never before.</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/Snorkeling.jpg" alt="Snorkeling" />
+            <h3>Snorkeling</h3>
+            <p>Discover the vibrant underwater life just beneath the surface.</p>
+          </div>
+          <div class="activity-card">
+            <img src="assets/img/kite.jpg" alt="Kite Flying" />
+            <h3>Kite Flying</h3>
+            <p>Feel the ocean breeze as your kite dances in the sky – a perfect family-friendly activity.</p>
+          </div>
+        </div>
+        <button class="slider-btn next">❯</button>
+      </div>
+    </section>
+
+    <!-- Testimonial section showcasing guest reviews -->
+    <section class="testimonial-section" id="testimonials">
+      <h2 class="testimonial-title">🌴 Voices of Paradise</h2>
+      <p class="testimonial-subtitle">Discover what our guests love about their Beaches experience</p>
+      <!-- Loading animation for testimonials -->
+      <div class="loading-container">
+        <div class="loading-wave"></div>
+      </div>
+      <!-- Carousel for testimonial cards -->
+      <div class="testimonial-carousel">
+        <div class="carousel-inner">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"The staff went above and beyond for our wedding. The beach ceremony was a dream come true!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/img/review1.jpg" alt="Raza" class="author-img">
+              <div class="author-info">
+                <h4>Raza</h4>
+                <p>Toronto, Canada</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Perfect for a solo retreat. The serene environment and spa were pure bliss."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/img/review3.jpg" alt="Owais" class="author-img">
+              <div class="author-info">
+                <h4>Owais</h4>
+                <p>Dubai, UAE</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"An incredible family vacation with stunning views and amazing activities!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/img/review2.jpg" alt="Mubasshir" class="author-img">
+              <div class="author-info">
+                <h4>Mubasshir</h4>
+                <p>New York, USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ section with collapsible questions and answers -->
+    <section class="faq-section" id="faq">
+      <h2 class="faq-title">🌴 Frequently Asked Questions</h2>
+      <p class="faq-subtitle">Everything you need to know about your Beaches experience</p>
+      <div class="faq-container">
+        <!-- FAQ item with toggleable answer -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What is included in an all-inclusive Beaches vacation?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our all-inclusive Beaches vacations include accommodations, unlimited gourmet dining, premium drinks, land and water sports, entertainment, and more. Tips, taxes, and gratuities are also covered, so you can relax and enjoy your stay without worry.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are there activities for kids and families?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! Beaches Resorts offers a range of family-friendly activities, including supervised kids’ camps, water parks, and teen programs. We also have family-oriented entertainment like beach games, movie nights, and interactive workshops.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I book a wedding or special event at Beaches?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Beaches specializes in destination weddings, honeymoons, and celebrations. We offer customizable wedding packages, stunning venues, and dedicated planners to make your event unforgettable. Contact us for more details!</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What safety measures are in place at Beaches Resorts?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We prioritize your safety with enhanced cleaning protocols, trained staff, and adherence to global health guidelines. Our resorts are equipped with medical facilities, and we offer flexible cancellation policies for peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download section for resort details -->
+    <section class="download-section" id="download">
+      <h2 class="download-title">🌴 Download Our Details</h2>
+      <p class="download-subtitle">Get all the information about Beaches Resorts in a PDF or DOC file</p>
+      <div class="download-container">
+        <!-- Download button for PDF file -->
+        <a href="assets/Beaches_Resorts_Details.pdf" download>
+          <button class="download-btn pdf-btn">Download as PDF</button>
+        </a>
+        <!-- Download button for DOC file -->
+        <a href="assets/Beaches_Resorts_Details.docx" download>
+          <button class="download-btn doc-btn">Download as DOC</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Feedback section with a form for user input -->
+    <section class="feedback-section" id="feedback">
+      <h2 class="feedback-title">🌴 Share Your Experience</h2>
+      <p class="feedback-subtitle">We’d love to hear your thoughts about your Beaches adventure!</p>
+      <div class="feedback-container">
+        <!-- Feedback form with input fields -->
+        <form class="feedback-form" id="feedbackForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Feedback</label>
+            <textarea id="message" name="message" placeholder="Share your experience..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+        <!-- Hidden thank you message displayed after form submission -->
+        <div class="feedback-thankyou" id="thankYouMessage" style="display: none;">
+          <p>Thank you for your feedback! We appreciate your input.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section with branding, links, and social media -->
+    <footer class="beach-footer">
+      <div class="footer-container">
+        <!-- Footer brand information -->
+        <div class="footer-brand">
+          <h2 class="footer-logo">Beaches</h2>
+          <p class="footer-tagline">Resorts for Everyone by Sandals</p>
+          <button class="newsletter-btn">Sign up for News & Deals</button>
+        </div>
+        <!-- Footer navigation links -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Book a Vacation</h3>
+            <ul>
+              <li><a href="assets/pages/booking.html">Book Online</a></li>
+              <li><a href="#">Get a Price Quote</a></li>
+              <li><a href="#">View Specials</a></li>
+              <li><a href="#">Find a Travel Agent</a></li>
+              <li><a href="#">View Locations</a></li>
+              <li><a href="#">Vacation Deals</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Already Booked?</h3>
+            <ul>
+              <li><a href="#">Check-in Online</a></li>
+              <li><a href="#">Book Optional Extras</a></li>
+              <li><a href="#">Balance Payment</a></li>
+              <li><a href="#">Butler Preferences</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Quick links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="assets/pages/zone.html">Explore Zone</a></li>
+              <li><a href="assets/pages/booking.html">For Booking</a></li>
+              <li><a href="assets/pages/about.html">About the Beaches</a></li>
+              <li><a href="#gallery">Beach Gallery</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Social media icons for footer -->
+        <div class="footer-social">
+          <a href="https://www.facebook.com/raza.ladla.10?mibextid=ZbWKwL" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/_rajput_raza_?utm_source=qr&igsh=cnh1NGo5ZG0xOGZ2" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.pinterest.com/" class="social-icon"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <!-- Footer bottom with copyright and credit -->
+      <div class="footer-bottom text-center">
+        <p>© 2025 Beaches Resorts. All Rights Reserved.</p>
+        <p>Made by ❤ Raza</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Bootstrap JavaScript for interactive components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  <!-- Custom JavaScript for additional functionality and interactions -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
